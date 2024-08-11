@@ -2,6 +2,7 @@
   <h4>select</h4>
   <mat-form-field appearance="outline">
     <mat-label>Favorite food</mat-label>
+    <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
     <mat-select>
       @for (food of foods; track food) {
       <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
@@ -27,8 +28,53 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Amount</mat-label>
-    <input matInput type="number" class="example-right-align" placeholder="0" />
+    @if(isFocused) {
     <span matTextPrefix>$&nbsp;</span>
-    <span matTextSuffix>0.00</span>
+    }
+    <input
+      matTextSuffix
+      matInput
+      type="number"
+      placeholder="0.00"
+      (focus)="isFocused = true"
+      (blur)="isFocused = false"
+    />
+  </mat-form-field>
+
+  <h4>select with custom trigger text</h4>
+  <mat-form-field appearance="outline">
+    <mat-label>Toppings</mat-label>
+    <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+    <mat-select multiple>
+      @for (topping of toppingList; track topping) {
+      <mat-option [value]="topping">{{ topping }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <h4>disabled select</h4>
+  <mat-form-field appearance="outline">
+    <mat-label>Toppings</mat-label>
+    <mat-icon matSuffix disabled>keyboard_arrow_down</mat-icon>
+    <mat-select [disabled]="true" multiple>
+      @for (topping of toppingList; track topping) {
+      <mat-option [value]="topping">{{ topping }}</mat-option>
+      }
+    </mat-select>
   </mat-form-field>
 </div>
+
+<h4>select with option groups</h4>
+<mat-form-field appearance="outline">
+  <mat-label>Pokemon</mat-label>
+  <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+  <mat-select [formControl]="pokemonControl">
+    @for (group of pokemonGroups; track group) {
+    <mat-optgroup [label]="group.name" [disabled]="group.disabled">
+      @for (pokemon of group.pokemon; track pokemon) {
+      <mat-option [value]="pokemon.value">{{ pokemon.viewValue }}</mat-option>
+      }
+    </mat-optgroup>
+    }
+  </mat-select>
+</mat-form-field>
