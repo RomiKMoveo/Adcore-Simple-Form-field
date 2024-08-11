@@ -1,0 +1,122 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+}
+.page-container mat-form-field {
+  width: var(--box-width) !important;
+}
+
+:root,
+:host {
+  /* COLORS */
+  --black: #000000;
+  --white: #ffffffff;
+  --light-grey: #e5e5e5;
+  --hover-grey: #f2f2f2;
+  --navy-blue: #172b4d;
+  --dark-navy-blue: #172b4d99;
+  --outline-blue: #3250a2;
+  --error-red: #c74538;
+
+  /* FONT WEIGHTS */
+  --font-weight-bold: 700;
+  --font-weight-semi-bold: 600;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* TYPOGRAPHY */
+  --font-family: "Raleway";
+  --lable-text-font-size: 16px;
+
+  /* SIZES */
+  --border-width: 1px;
+  --border-radius: 3px;
+  --box-width: 275px;
+  --box-height: 40px;
+  --mat-select-container-elevation-shadow: none !important;
+  --mdc-filled-text-field-container-color: var(--white) !important;
+  --mat-form-field-hover-state-layer-opacity: var(--white) !important;
+  --mat-form-field-state-layer-color: var(--white) !important;
+}
+
+/* Select field styling */
+.mat-mdc-form-field {
+  --mdc-outlined-text-field-container-shape: var(--border-radius);
+  --mdc-outlined-text-field-container-width: var(--box-width) !important;
+  --mat-form-field-container-text-line-height: var(
+    --lable-text-font-size
+  ) !important;
+  --mat-form-field-container-height: var(--box-height) !important;
+
+  /* Label styling */
+  --mdc-outlined-text-field-label-text-color: var(--dark-navy-blue);
+  --mdc-outlined-text-field-label-text-size: var(--lable-text-font-size);
+  --mdc-outlined-text-field-label-text-weight: var(--font-weight-medium);
+  --mdc-outlined-text-field-label-text-font: var(--font-family) !important;
+  --mdc-outlined-text-field-disabled-label-text-color: var(--light-grey);
+  --mdc-outlined-text-field-error-label-text-color: var(--dark-navy-blue);
+  --mdc-outlined-text-field-error-hover-label-text-color: var(--dark-navy-blue);
+
+  /* Input text */
+  --mdc-outlined-text-field-input-text-color: var(--navy-blue);
+
+  /* Placeholder */
+  --mdc-outlined-text-field-input-text-placeholder-color: var(--dark-navy-blue);
+
+  /* Border colors */
+  --mdc-outlined-text-field-outline-color: var(--light-grey);
+  --mdc-outlined-text-field-focus-outline-color: var(--outline-blue);
+  --mdc-outlined-text-field-hover-outline-color: var(--outline-blue);
+  --mdc-outlined-text-field-disabled-outline-color: var(--light-grey);
+  --mdc-outlined-text-field-error-outline-color: var(--light-grey);
+  --mdc-outlined-text-field-error-focus-outline-color: var(--outline-blue);
+
+  --mat-form-field-container-vertical-padding: 0 !important;
+}
+
+/* Drop-down background and border */
+.mat-mdc-select-panel {
+  outline: solid !important;
+  outline-width: 1px !important;
+  outline-color: var(--light-grey) !important;
+  background-color: var(--white) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--mat-select-container-elevation-shadow) !important;
+}
+
+/* Drop-down list */
+.mat-mdc-option-active {
+  background-color: unset !important;
+}
+
+.mat-mdc-option:hover {
+  background-color: var(--hover-grey) !important;
+  border: var(--border-width) solid var(--light-grey) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.mat-mdc-option {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  font-family: "Raleway" !important;
+  color: var(--dark-navy-blue) !important;
+}
+
+.mat-mdc-select-arrow svg,
+.mat-mdc-select-value,
+.mat-mdc-select-value-text {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  font-family: "Raleway" !important;
+  color: var(--dark-navy-blue) !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper,
+.mat-mdc-form-field-bottom-align::before {
+  display: none !important;
+}
